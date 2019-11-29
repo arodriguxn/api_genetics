@@ -77,14 +77,13 @@ class Mongo_crud:
 		List: list
 			lista de gen_clinical_info
 		"""
+		genes = []
 		cursor = self.gene_col.find({**self.clinicalinfo_att, "Approved_symbol": symbol})
-		if cursor.count() == 0:	
-			return InvalidData('JSON no valido, no existe el id_omega', status_code=400)
-		else:
+		for record in cursor:
 			# elimina el identificador
-			record = cursor[0]
 			record.pop('_id')
-			return record
+			genes.append(record)
+		return genes
 
 	def get_by_disease(self, disease, start, limit):
 		"""Devuelve gen_clinical_info buscando por enfermedad
@@ -242,4 +241,4 @@ class Mongo_crud:
 			# elimina el identificador
 			record.pop('_id')
 			cancer_list.append(record)
-		return	cancer_list
+		return cancer_list

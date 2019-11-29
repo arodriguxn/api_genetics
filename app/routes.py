@@ -118,10 +118,7 @@ def clinicalinfo(id_symbol):
 			200: conversion del JSON al mimetype application/json
 		"""
 		result = crud.get_one_clinicalinfo(str(id_symbol))
-		if isinstance(result, InvalidData):
-			raise result
-		else:
-			return jsonify(result)
+		return jsonify(result)
 
 @app.route("/cancer", methods=['GET'])
 def cancer():
