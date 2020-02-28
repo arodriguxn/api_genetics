@@ -1,0 +1,204 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+192.168.60.54 - - [15/Jan/2020 14:53:55] "GET /variants HTTP/1.1" 404 -
+192.168.60.54 - - [15/Jan/2020 14:53:55] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.60.54 - - [15/Jan/2020 14:54:03] "GET /genetics HTTP/1.1" 404 -
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:50001/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 132-505-820
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "run.py", line 4, in <module>
+    app.run(app.config['HOST'], app.config['PORT'])
+  File "/home/mongo/api_participantes/env/lib/python3.6/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/mongo/api_participantes/env/lib/python3.6/site-packages/werkzeug/serving.py", line 988, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:50001/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 836-558-947
+10.20.2.1 - - [15/Jan/2020 15:02:18] "GET /cancer?value=Oral%20cavity HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mongo/api_genetics/app/routes.py", line 143, in cancer
+    result = crud.get_risks_by_cancergroup(value, start, limit)
+  File "/home/mongo/api_genetics/app/mongo_crud.py", line 178, in get_risks_by_cancergroup
+    for record in cursor:
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1807, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1760, in __start_session
+    server_session = self._get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1793, in _get_server_session
+    return self._topology.get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 477, in get_server_session
+    None)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 205, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: 0.0.0.0:27017: [Errno 111] Connection refused
+10.20.2.1 - - [15/Jan/2020 15:03:40] "GET /clinicalinfo/search-by-phenotype?value=deficit+igA HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mongo/api_genetics/app/routes.py", line 103, in clinicalinfo_phenotype
+    result = crud.get_by_phenotype(value, start, limit)
+  File "/home/mongo/api_genetics/app/mongo_crud.py", line 151, in get_by_phenotype
+    for record in cursor:
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1807, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1760, in __start_session
+    server_session = self._get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1793, in _get_server_session
+    return self._topology.get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 477, in get_server_session
+    None)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 205, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: 0.0.0.0:27017: [Errno 111] Connection refused
+10.20.2.1 - - [15/Jan/2020 15:04:10] "GET /clinicalinfo/search-by-disease?value=deficit+igA HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mongo/api_genetics/app/routes.py", line 77, in clinicalinfo_disease
+    result = crud.get_by_disease(value, start, limit)
+  File "/home/mongo/api_genetics/app/mongo_crud.py", line 117, in get_by_disease
+    for record in cursor:
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1807, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1760, in __start_session
+    server_session = self._get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1793, in _get_server_session
+    return self._topology.get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 477, in get_server_session
+    None)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 205, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: 0.0.0.0:27017: [Errno 111] Connection refused
+10.20.2.1 - - [15/Jan/2020 15:06:33] "GET /cancer?value=Oral%20cavity HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mongo/api_genetics/app/routes.py", line 143, in cancer
+    result = crud.get_risks_by_cancergroup(value, start, limit)
+  File "/home/mongo/api_genetics/app/mongo_crud.py", line 178, in get_risks_by_cancergroup
+    for record in cursor:
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1807, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1760, in __start_session
+    server_session = self._get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/mongo_client.py", line 1793, in _get_server_session
+    return self._topology.get_server_session()
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 477, in get_server_session
+    None)
+  File "/home/mongo/api_env/lib/python3.6/site-packages/pymongo/topology.py", line 205, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: 0.0.0.0:27017: [Errno 111] Connection refused

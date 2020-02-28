@@ -113,7 +113,7 @@ class Mongo_crud:
 				{"DECIPHER.DECIPHER_omimDiseaseName": reg_value},
 				{"clinvar_pathogenicUncertain_disease": reg_value}
 			]}
-				).skip(start).limit(limit)
+				)
 		for record in cursor:
 			# elimina el identificador
 			record.pop('_id')
@@ -147,7 +147,7 @@ class Mongo_crud:
 				{"MONARCH.MONARCH_hpoTerms": reg_value},
 				{"DECIPHER.DECIPHER_omimHpoTerms": reg_value}
 			]}
-				).skip(start).limit(limit)
+				)
 		for record in cursor:
 			# elimina el identificador
 			record.pop('_id')
@@ -174,7 +174,7 @@ class Mongo_crud:
 		"""
 		cancer_list = []
 		reg_value = re.compile(".*" + cancer_group + ".*", re.IGNORECASE)
-		cursor = self.gene_col.find({**self.cancer_att, "cancer_group": reg_value}).skip(start).limit(limit)
+		cursor = self.gene_col.find({**self.cancer_att, "cancer_group": reg_value})
 		for record in cursor:
 			# elimina el identificador
 			record.pop('_id')
@@ -205,7 +205,7 @@ class Mongo_crud:
 			"$or": [
 				{"risk_factors_IARCC": reg_value},
 				{"risk_factors_NTP": reg_value}
-			]}).skip(start).limit(limit)
+			]})
 		for record in cursor:
 			# elimina el identificador
 			record.pop('_id')
